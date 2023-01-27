@@ -88,7 +88,7 @@ const orderSchema = new mongoose.Schema({
     default: 0,
   },
 
-  texPrice: {
+  taxPrice: {
     type: Number,
     requered: true,
     default: 0,
