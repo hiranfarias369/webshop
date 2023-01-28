@@ -106,7 +106,7 @@ const orderSchema = new mongoose.Schema({
     default: 0,
   },
 
-  ordersStatus: {
+  orderStatus: {
     type: String,
     requered: true,
     default: "Processing orders",
