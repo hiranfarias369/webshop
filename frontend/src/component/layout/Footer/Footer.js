@@ -3,6 +3,7 @@ import playStore from "../../../images/playstore.png";
 import appStore from "../../../images/Appstore.png";
 import "./Footer.css";
 
+
 const Footer = () => {
   return (
     <footer id="footer">
@@ -14,17 +15,20 @@ const Footer = () => {
       </div>
 
       <div className="midFooter">
-        <h1>ECOMMERCE.</h1>
+        <h1>Diy Hellem Confecções.</h1>
         <p>
-          Construa seu site com quem entende, a alta qualidade é nossa prioridade{" "}
+          Construa seu site com quem entende. <br />A alta qualidade é nossa
+          prioridade
         </p>
 
-        <p>Copyright 2023 Farias&Santos &copy; Todos os Direitos Reservados</p>
+        <p>
+          Copyright Farias & Santos 2023 &copy; Todos os Direitos Reservados
+        </p>
       </div>
 
       <div className="rightFooter">
         <h4>Siga-nos</h4>
-        <a href="https://github.com/hiranfarias369">Instagram</a>
+        <a href="https://www.instagram.com/diyhellem/">Instagram</a>
         <a href="https://github.com/hiranfarias369">Youtube</a>
         <a href="https://github.com/hiranfarias369">Facebook</a>
       </div>
