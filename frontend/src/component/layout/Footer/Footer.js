@@ -1,7 +1,11 @@
 //import React from "react";
+
 import playStore from "../../../images/playstore.png";
 import appStore from "../../../images/Appstore.png";
 import "./Footer.css";
+
+import {FaInstagram,FaTwitterSquare} from "react-icons/fa";
+import {ImFacebook2} from "react-icons/im";
 
 
 const Footer = () => {
@@ -28,9 +32,9 @@ const Footer = () => {
 
       <div className="rightFooter">
         <h4>Siga-nos</h4>
-        <a href="https://www.instagram.com/diyhellem/">Instagram</a>
-        <a href="https://github.com/hiranfarias369">Youtube</a>
-        <a href="https://github.com/hiranfarias369">Facebook</a>
+        <a href="https://www.instagram.com/diyhellem/"> <FaInstagram /> </a>
+        <a href="https://github.com/hiranfarias369"> <FaTwitterSquare /> </a>
+        <a href="https://github.com/hiranfarias369"> <ImFacebook2 /> </a>
       </div>
     </footer>
   );
