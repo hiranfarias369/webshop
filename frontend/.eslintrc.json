@@ -8,34 +8,39 @@
     "prettier"
   ],
   
-"plugins": [
-    //"react", 
-    "import", 
-    "jsx-a11y"],
-
-  "rules": {
-    "react/prop-types": "off",
-    "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off",
-    "react/self-closing-comp": "warn",
-    "indent": ["error", 2],
-    "linebreak-style": ["error", "windows"],
-    "quotes": ["error", "double"]
-  },
-
-  "parserOptions": {
+"parserOptions": {
     "ecmaVersion": 2021,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
     }
   },
+
   "env": {
     "es6": true,
     "browser": true,
     "jest": true,
     "node": true
   },
+
+
+  "rules": {
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/self-closing-comp": "warn",
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "windows"],
+    "quotes": ["error", "double"],
+    "react/jsx-uses-vars": "error",
+    "react/jsx-uses-react": "error"
+  },
+
+"plugins": [
+    "react", 
+    "import", 
+    "jsx-a11y"
+  ],
+  
   "settings": {
     "react": {
       "version": "detect"

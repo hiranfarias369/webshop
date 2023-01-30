@@ -1,19 +1,17 @@
-//import React from "react";
-
+import React from "react";
 import playStore from "../../../images/playstore.png";
 import appStore from "../../../images/Appstore.png";
 import "./Footer.css";
 
-import {FaInstagram,FaTwitterSquare} from "react-icons/fa";
-import {ImFacebook2} from "react-icons/im";
-
+import { FaInstagram, FaTwitterSquare } from "react-icons/fa";
+import { ImFacebook2 } from "react-icons/im";
 
 const Footer = () => {
   return (
     <footer id="footer">
       <div className="leftFooter">
-        <h4>DOWNLOAD OUR APP</h4>
-        <p>Download App for Android and IOS mobile phone</p>
+        <h4>fgf</h4>
+        <p>Baixe nosso App para telefones Android e iOS</p>
         <img src={playStore} alt="playstore" />
         <img src={appStore} alt="Appstore" />
       </div>
@@ -32,9 +30,18 @@ const Footer = () => {
 
       <div className="rightFooter">
         <h4>Siga-nos</h4>
-        <a href="https://www.instagram.com/diyhellem/"> <FaInstagram /> </a>
-        <a href="https://github.com/hiranfarias369"> <FaTwitterSquare /> </a>
-        <a href="https://github.com/hiranfarias369"> <ImFacebook2 /> </a>
+        <a href="https://www.instagram.com/diyhellem/">
+          {" "}
+          <FaInstagram />{" "}
+        </a>
+        <a href="https://www.facebook.com/Diy-Hellem-Confec%C3%A7%C3%B5es-102838436058751">
+          {" "}
+          <ImFacebook2 />{" "}
+        </a>
+        <a href="https://github.com/hiranfarias369">
+          {" "}
+          <FaTwitterSquare />{" "}
+        </a>
       </div>
     </footer>
   );
