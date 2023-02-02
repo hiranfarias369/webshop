@@ -33,6 +33,9 @@
     "quotes": ["error", "double"],
     "react/jsx-uses-vars": "error",
     "react/jsx-uses-react": "error"
+
+    
+   
   },
 
 "plugins": [
