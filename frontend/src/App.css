@@ -1,4 +1,25 @@
-*{
-  margin:0;
+* {
+  margin: 0;
   scroll-behavior: smooth;
+}
+
+/* Chome, safari, edge. opera */
+
+input::-webkit-outer-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-opperance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.greenColor {
+  color: green !important;
+}
+.redColor {
+  color: red !important;
 }

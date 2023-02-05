@@ -1,12 +1,13 @@
 import React, { Fragment, useEffect } from "react";
 import { CgMouse } from "react-icons/all";
 import "./Home.css";
-import Product from "./Product.js";
+//import Product from "./ProductCard.js";
 import MetaData from "../layout/MetaData";
 import { clearErrors, getProduct } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "../layout/Loader/Loader";
-import {useAlert} from "react-alert";
+import { useAlert } from "react-alert";
+import ProductCard from "./ProductCard.js";
 
 const Home = () => {
   const alert = useAlert();
@@ -14,12 +15,10 @@ const Home = () => {
   const { loading, error, products } = useSelector((state) => state.products);
 
   useEffect(() => {
-
     if (error) {
       alert.error(error);
       dispatch(clearErrors());
     }
-
     dispatch(getProduct());
   }, [dispatch, error, alert]);
 
@@ -30,9 +29,10 @@ const Home = () => {
       ) : (
         <Fragment>
           <MetaData title="WEBSHOP" />
+
           <div className="banner">
             <p>Bem-vindo a Diy Hellem Confecções.</p>
-            <h1> ENCONTRE PRODUTOS INCRÍVEIS</h1>
+            <h1>ENCONTRE PRODUTOS INCRÍVEIS</h1>
 
             <a href="#container">
               <button>
@@ -45,7 +45,9 @@ const Home = () => {
 
           <div className="container" id="container">
             {products &&
-              products.map((product) => <Product product={product} />)}
+              products.map((product) => (
+                <ProductCard key={product._id} product={product} />
+              ))}
           </div>
         </Fragment>
       )}
@@ -54,3 +56,4 @@ const Home = () => {
 };
 
 export default Home;
+

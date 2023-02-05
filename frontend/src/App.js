@@ -5,6 +5,9 @@ import webFont from "webfontloader";
 import React from "react";
 import Footer from "./component/layout/Footer/Footer.js";
 import Home from "./component/Home/Home.js";
+import ProductDetails from "./component/Product/ProductDetails.js";
+import Products from "./component/Product/Products";
+import Search from "./component/Product/Search";
 
 
 function App() {
@@ -20,7 +23,10 @@ function App() {
     <Router>
       <Header />
       <Route exact path="/" component={Home} />
-     
+      <Route exact path="/product/:id" component={ProductDetails} />
+      <Route exact path="/products" component={Products} />
+      <Route  path="/products/:keyword" component={Products} />
+      <Route exact path="/search" component={Search} />
 
       <Footer />
     </Router>

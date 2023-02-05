@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer id="footer">
       <div className="leftFooter">
-        <h4>fgf</h4>
+        <h4>Aplicativos para Celulares</h4>
         <p>Baixe nosso App para telefones Android e iOS</p>
         <img src={playStore} alt="playstore" />
         <img src={appStore} alt="Appstore" />
