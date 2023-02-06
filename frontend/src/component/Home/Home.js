@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect } from "react";
 import { CgMouse } from "react-icons/all";
 import "./Home.css";
-//import Product from "./ProductCard.js";
 import MetaData from "../layout/MetaData";
 import { clearErrors, getProduct } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
@@ -12,7 +11,7 @@ import ProductCard from "./ProductCard.js";
 const Home = () => {
   const alert = useAlert();
   const dispatch = useDispatch();
-  const { loading, error, products } = useSelector((state) => state.products);
+  const { loading, error, products} = useSelector((state) => state.products);
 
   useEffect(() => {
     if (error) {
@@ -28,7 +27,7 @@ const Home = () => {
         <Loader />
       ) : (
         <Fragment>
-          <MetaData title="WEBSHOP" />
+          <MetaData title="Diy Hellem Confecções." />
 
           <div className="banner">
             <p>Bem-vindo a Diy Hellem Confecções.</p>

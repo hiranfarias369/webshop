@@ -34,7 +34,19 @@
     "react/jsx-uses-vars": "error",
     "react/jsx-uses-react": "error"
 
-    
+    // "jsx-a11y/no-noninteractive-element-interactions": [
+    //  " error",
+    //   {
+    //     "handlers": [
+    //      " onClick",
+    //       "onMouseDown",
+    //       "onMouseUp",
+    //       "onKeyPress",
+    //       "onKeyDown",
+    //       "onKeyUp",
+    //     ]
+    //   }
+    // ]
    
   },
 

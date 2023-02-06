@@ -17,12 +17,12 @@ const Search = ({ history }) => {
 
   return (
     <Fragment>
-      <MetaData title="Pesquisar Produtos -- WEBSHOP" />
+      <MetaData title="PESQUISAR -- Diy Hellem Confecções." />
       <form className="searchBox" onSubmit={searchSubmitHandler}>
 
         <input
           type="text"
-          placeholder="Pesquisar um produto ..."
+          placeholder="Pesquisar produto(s) ..."
           onChange={(e) => setKeyword(e.target.value)}
         />
         <input type="submit" value="Pesquisar" />
