@@ -115,13 +115,13 @@ const LoginSignUp = ({history}) => {
               <div>
                 <div className="login_signUp_toggle">
                   <p onClick={(e) => switchTabs(e, "login")} aria-hidden="true">
-                    ACESSAR
+                   EFETUAR LOGIN
                   </p>
                   <p
                     onClick={(e) => switchTabs(e, "register")}
                     aria-hidden="true"
                   >
-                    CADASTRAR-SE
+                    CADASTRE-SE
                   </p>
                 </div>
                 <button ref={switcherTab} />
@@ -147,7 +147,7 @@ const LoginSignUp = ({history}) => {
                     onChange={(e) => setLoginPassword(e.target.value)}
                   />
                 </div>
-                <Link to="/password/forgot">Esqueceu Senha ?</Link>
+                <Link to="/password/forgot">Recuperar Senha ?</Link>
                 <input type="submit" value="Entrar" className="loginBtn" />
               </form>
 

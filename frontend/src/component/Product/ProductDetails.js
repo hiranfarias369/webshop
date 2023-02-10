@@ -91,11 +91,11 @@ const ProductDetails = ({ match }) => {
                 Descrição : <p>{product.description}</p>
               </div>
 
-              <button className="submitReview"> Submeter Análise</button>
+              <button className="submitReview">Avaliar</button>
             </div>
           </div>
 
-          <h3 className="reviewsHeading">CLASSIFICAÇÕES</h3>
+          <h3 className="reviewsHeading">Avaliações</h3>
 
           {product.reviews && product.reviews[0] ? (
             <div className="reviews">
@@ -105,7 +105,7 @@ const ProductDetails = ({ match }) => {
                 ))}
             </div>
           ) : (
-            <p className="noReviews">Ainda sem Classificação</p>
+            <p className="noReviews">Produto sem Avaliação, Seja o Primeiro a Avaliar!</p>
           )}
         </Fragment>
       )}

@@ -44,13 +44,13 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
   const user = await User.findOne({ email }).select("+password");
 
   if (!user) {
-    return next(new ErrorHander("Invalid email or password", 401));
+    return next(new ErrorHander("Senha ou Email Incorreto, Tente Novamente!", 401));
   }
 
   const isPasswordMatched = await user.comparePassword(password);
 
   if (!isPasswordMatched) {
-    return next(new ErrorHander("Invalid email or password", 401));
+    return next(new ErrorHander("Senha ou Email Incorreto, Tente Novamente!", 401));
   }
 
   sendToken(user, 200, res);
@@ -185,6 +185,25 @@ exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
     name: req.body.name,
     email: req.body.email,
   };
+
+  if (req.body.avatar !==""){
+    const user = await User.findById(req.user.id);
+    const imageId = user.avatar.public_id;
+
+    await cloudinary.v2.uploader.destroy(imageId);
+
+    const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
+      folder: "avatars",
+      width:150,
+      crop:"scale",
+    });
+
+    newUserData.avatar={
+      public_id:myCloud.public_id,
+      url:myCloud.secure_url,
+    }
+
+  }
 
   // We will add cloudinary later
   const user = await User.findByIdAndUpdate(req.user.id, newUserData, {
