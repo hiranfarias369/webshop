@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import Carousel from "react-material-ui-carousel";
 import "./ProductDetails.css";
 import { useSelector, useDispatch } from "react-redux";
@@ -8,31 +8,53 @@ import ReviewCard from "./ReviewCard.js";
 import Loader from "../layout/Loader/Loader";
 import { useAlert } from "react-alert";
 import MetaData from "../layout/MetaData";
+import { addItemsToCart } from "../../actions/cartAction";
 
 const ProductDetails = ({ match }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
+
   const { product, loading, error } = useSelector(
     (state) => state.productDetails
   );
+
+  const options = {
+    edit: false,
+    color: "rgba(20,20,20,0.1)",
+    activeColor: "tomato",
+    size: window.innerWidth < 600 ? 20 : 25,
+    value: product.ratings,
+    isHalf: true,
+  };
+
+  const [quantity, setQuantity] = useState(1);
+
+  const increaseQuantity = () => {
+    if (product.Stock <= quantity) return;
+
+    const qty = quantity + 1;
+    setQuantity(qty);
+  };
+
+  const decreaseQuantity = () => {
+    if (1 >= quantity) return;
+
+    const qty = quantity - 1;
+    setQuantity(qty);
+  };
+
+  const addToCartHandler = () => {
+    dispatch(addItemsToCart(match.params.id, quantity));
+    alert.success("Item Adicionado Ao Carrinho");
+  };
 
   useEffect(() => {
     if (error) {
       alert.error(error);
       dispatch(clearErrors());
     }
-
     dispatch(getProductDetails(match.params.id));
   }, [dispatch, match.params.id, error, alert]);
-
-  const options = {
-    edit: false,
-    color: "rgba(20,20,20,0.1)",
-    size: window.innerWidth < 600 ? 20 : 25,
-    activeColor: "tomato",
-    value: product.ratings,
-    isHalf: true,
-  };
 
   return (
     <Fragment>
@@ -48,7 +70,7 @@ const ProductDetails = ({ match }) => {
                   product.images.map((item, i) => (
                     <img
                       className="CarouselImage"
-                      key={item.url}
+                      key={i}
                       src={item.url}
                       alt={`${i} Slide`}
                     />
@@ -72,15 +94,15 @@ const ProductDetails = ({ match }) => {
 
                 <div className="detailsBlock-3-1">
                   <div className="detailsBlock-3-1-1">
-                    <button>-</button>
-                    <input value="1" type="number" />
-                    <button>+</button>
-                  </div>{" "}
-                  <button>Adicionar ao Carrinho</button>
+                    <button onClick={decreaseQuantity}>-</button>
+                    <input readOnly type="number" value={quantity} />
+                    <button onClick={increaseQuantity}>+</button>
+                  </div>
+                  <button  onClick={addToCartHandler}>Adicionar ao Carrinho</button>
                 </div>
 
                 <p>
-                  Status:{" "}
+                  Status:
                   <b className={product.Stock < 1 ? "redColor" : "greenColor"}>
                     {product.Stock < 1 ? "Sem Estoque" : " Em Estoque"}
                   </b>
@@ -105,7 +127,9 @@ const ProductDetails = ({ match }) => {
                 ))}
             </div>
           ) : (
-            <p className="noReviews">Produto sem Avaliação, Seja o Primeiro a Avaliar!</p>
+            <p className="noReviews">
+              Produto sem Avaliação, Seja o Primeiro a Avaliar!
+            </p>
           )}
         </Fragment>
       )}

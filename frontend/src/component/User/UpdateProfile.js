@@ -77,11 +77,11 @@ const UpdateProfile = ({ history }) => {
         <Loader />
       ) : (
         <Fragment>
-          <MetaData title="UPDATE PROFILE -- Diy Hellem Confecções." />
+          <MetaData title="ATUALIZAR PERFIL -- Diy Hellem Confecções." />
 
           <div className="updateProfileContainer">
             <div className="updateProfileBox">
-              <h2 className="updateProfileHeading">Atualizar Perfil</h2>
+              <h2 className="updateProfileHeading">ATUALIZAR PERFIL</h2>
 
               <form
                 className="updateProfileForm"

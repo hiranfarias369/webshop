@@ -41,12 +41,12 @@ const Profile = ({ history }) => {
                 <h4>Email</h4>
                 <p>{user.email}</p>
               </div>
-              <div className="Appp">
+              <div >
                 <h4>Membro Desde:</h4>
 
                 <p>
                   {closest &&
-                    format(closest, "pp, eeee, dd/MM/yyyy  ", {
+                    format(closest, "eeee - dd/MM/yyyy - pp", {
                       locale: ptBR,
                     })}
                 </p>
@@ -54,7 +54,7 @@ const Profile = ({ history }) => {
 
               <div>
                 <Link to="/orders">Meus Pedidos</Link>
-                <Link to="/password/update">Alterar Senha</Link>
+                <Link to="/password/update">Atualizar Senha</Link>
               </div>
             </div>
           </div>

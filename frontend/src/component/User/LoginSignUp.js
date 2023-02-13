@@ -9,11 +9,18 @@ import MetaData from "../layout/MetaData";
 import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, login, register } from "../../actions/userAction";
 import { useAlert } from "react-alert";
+import Eye from "../../images/eye.svg"
+import EyeOff from "../../images/eye-off.svg"
 
-const LoginSignUp = ({history}) => {
+
+
+
+
+
+const LoginSignUp = ({ history }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
-  const { error, loading, isAuthenticated} = useSelector(
+  const { error, loading, isAuthenticated } = useSelector(
     (state) => state.user
   );
 
@@ -49,7 +56,7 @@ const LoginSignUp = ({history}) => {
     myForm.set("email", email);
     myForm.set("password", password);
     myForm.set("avatar", avatar);
-    dispatch(register(myForm))
+    dispatch(register(myForm));
   };
 
   const registerDataChange = (e) => {
@@ -69,21 +76,18 @@ const LoginSignUp = ({history}) => {
     }
   };
 
+  const redirect = location.search ? location.search.split("=")[1] : "/account";
 
-
-
-  
   useEffect(() => {
     if (error) {
       alert.error(error);
       dispatch(clearErrors());
     }
 
-    if(isAuthenticated) {
-      history.push("/account")
+    if (isAuthenticated) {
+      history.push("/account");
     }
-    
-  }, [dispatch, error, alert, history, isAuthenticated]);
+  }, [dispatch, error, alert, history, isAuthenticated, redirect]);
 
   const switchTabs = (e, tab) => {
     if (tab === "login") {
@@ -102,6 +106,24 @@ const LoginSignUp = ({history}) => {
     }
   };
 
+
+
+
+  const [icon, setIcon] = useState(EyeOff);
+  const [inputType, setInputType] = useState("password");
+  const alternarVisibilityPassword = () => {
+    if(inputType === "password") {
+      setInputType("text");
+      setIcon(Eye)
+    } else {
+      setInputType("password");
+      setIcon(EyeOff)
+    }
+  }
+
+
+
+
   return (
     <Fragment>
       {loading ? (
@@ -115,7 +137,7 @@ const LoginSignUp = ({history}) => {
               <div>
                 <div className="login_signUp_toggle">
                   <p onClick={(e) => switchTabs(e, "login")} aria-hidden="true">
-                   EFETUAR LOGIN
+                    EFETUAR LOGIN
                   </p>
                   <p
                     onClick={(e) => switchTabs(e, "register")}
@@ -136,18 +158,38 @@ const LoginSignUp = ({history}) => {
                     value={loginEmail}
                     onChange={(e) => setLoginEmail(e.target.value)}
                   />
+
+
+                
+
+                  
                 </div>
+
                 <div className="loginPassword">
+                  
                   <LockOpenIcon />
+               
                   <input
-                    type="password"
-                    placeholder="Password"
+                    type={inputType}
+
+
+                    placeholder="Password" 
+
+
                     required
                     value={loginPassword}
                     onChange={(e) => setLoginPassword(e.target.value)}
                   />
+
+                  
+                  <span className="password-icon" onClick={alternarVisibilityPassword} aria-hidden="true"><img src={icon} alt="" /></span>
+
+
                 </div>
-                <Link to="/password/forgot">Recuperar Senha ?</Link>
+
+                
+
+                <Link to="/password/forgot">Recuperar Senha</Link>
                 <input type="submit" value="Entrar" className="loginBtn" />
               </form>
 
@@ -184,13 +226,18 @@ const LoginSignUp = ({history}) => {
                 <div className="signUpPassword">
                   <LockOpenIcon />
                   <input
-                    type="password"
+                    type={inputType}
                     placeholder="Password"
                     required
                     name="password"
                     value={password}
                     onChange={registerDataChange}
                   />
+
+
+                  <span className="password-icon" onClick={alternarVisibilityPassword} aria-hidden="true"><img src={icon} alt="" /></span>
+
+
                 </div>
 
                 <div id="registerImage">
