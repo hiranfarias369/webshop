@@ -8,7 +8,7 @@ const CartItemCard = ({ item, deleteCartItems }) => {
       <img src={item.image} alt="ssa" />
       <div>
         <Link to={`/product/${item.product}`}>{item.name}</Link>
-        <span>{`Preço: R$ ${item.price}`}</span>
+        <span>{`Preço: ${item.price.toLocaleString("pt-br",{style: "currency", currency: "BRL"})}`}</span>
         
         <p onClick={() => deleteCartItems(item.product)} aria-hidden="true">
           Remover

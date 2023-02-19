@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
         <span> ({product.numOfReviews} Reviews) </span>
       </div>
 
-      <span>{`R$ ${product.price}`}</span>
+      <span>{`${product.price.toLocaleString("pt-br",{style: "currency", currency: "BRL"})}`}</span>
     </Link>
   );
 };

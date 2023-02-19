@@ -90,7 +90,12 @@ const ProductDetails = ({ match }) => {
               </div>
 
               <div className="detailsBlock-3">
-                <h1>{`R$ ${product.price}`}</h1>
+
+
+                <h1>{`${[product.price].toLocaleString("pt-br",{style: "currency", currency: "BRL"})}`}</h1>
+
+
+                
 
                 <div className="detailsBlock-3-1">
                   <div className="detailsBlock-3-1-1">
@@ -104,7 +109,7 @@ const ProductDetails = ({ match }) => {
                 <p>
                   Status:
                   <b className={product.Stock < 1 ? "redColor" : "greenColor"}>
-                    {product.Stock < 1 ? "Sem Estoque" : " Em Estoque"}
+                    {product.Stock < 1 ? " Sem Estoque" : " Em Estoque"}
                   </b>
                 </p>
               </div>
