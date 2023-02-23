@@ -7,7 +7,8 @@ import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
 import { Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
-const Cart = ({history}) => {
+const Cart = ({ history }) => {
+  
   const dispatch = useDispatch();
   const { cartItems } = useSelector((state) => state.cart);
 
@@ -36,17 +37,16 @@ const Cart = ({history}) => {
   };
 
   const checkoutHandler = () => {
-    history.push("/login?redirect=shipping")
-  }
+    history.push("/login?redirect=shipping");
+  };
 
   return (
     <Fragment>
       {cartItems.length === 0 ? (
         <div className="emptyCart">
-          <RemoveShoppingCartIcon/>
+          <RemoveShoppingCartIcon />
           <Typography>Seu Carrinho Está Vazio </Typography>
           <Link to="/products">Ver Produtos</Link>
-
         </div>
       ) : (
         <Fragment>
@@ -87,7 +87,10 @@ const Cart = ({history}) => {
                   </div>
                   <p className="cartSubtotal">
                     {" "}
-                    {`${(item.price * item.quantity).toLocaleString("pt-br",{style: "currency", currency: "BRL"})}`}
+                    {`${(item.price * item.quantity).toLocaleString("pt-br", {
+                      style: "currency",
+                      currency: "BRL",
+                    })}`}
                   </p>
                 </div>
               ))}
@@ -97,16 +100,22 @@ const Cart = ({history}) => {
               <div className="cartGrossProfitBox">
                 <p>Total</p>
 
-                <p>{`${(cartItems.reduce((acc, item) => acc + item.quantity * item.price,0)).toLocaleString("pt-br",{style: "currency", currency: "BRL"})}`}</p>
+                <p>{`${cartItems
+                  .reduce((acc, item) => acc + item.quantity * item.price, 0)
+                  .toLocaleString("pt-br", {
+                    style: "currency",
+                    currency: "BRL",
+                  })}`}</p>
               </div>
 
               <div />
               <div className="checkOutBtn">
-                <button onClick={checkoutHandler}>Verificar</button>
+                <button onClick={checkoutHandler}>Confirmar Pedido</button>
               </div>
             </div>
           </div>
         </Fragment>
+      
       )}
     </Fragment>
   );

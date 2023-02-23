@@ -66,7 +66,7 @@ exports.logout = catchAsyncErrors(async (req, res, next) => {
 
   res.status(200).json({
     success: true,
-    message: "Logged out successfully",
+    message: "Sessão Encerrada Com Sucesso!",
   });
 });
 
@@ -87,12 +87,12 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
 
   const resetPasswordUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}` ;
 
-  const message = `Your password reset token is :- \n\n ${resetPasswordUrl} \n\nIf you have not requested this email then, please ignore it.`;
+  const message = `O seu código de redefinição de senha é :- \n\n ${resetPasswordUrl} \n\nSe não solicitou este e-mail então, por favor ignore-o.`;
 
   try {
     await sendEmail({
       email: user.email,
-      subject: `Ecommerce Password recovery`,
+      subject: `Recuperação da Senha para Diy Hellem Confecções`,
       message,
     });
 

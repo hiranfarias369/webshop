@@ -11,7 +11,7 @@ import ProductCard from "./ProductCard.js";
 const Home = () => {
   const alert = useAlert();
   const dispatch = useDispatch();
-  const { loading, error, products} = useSelector((state) => state.products);
+  const { loading, error, products } = useSelector((state) => state.products);
 
   useEffect(() => {
     if (error) {
@@ -36,10 +36,11 @@ const Home = () => {
             <a href="#container">
               <button>
                 Scroll <CgMouse />
+                
               </button>
             </a>
           </div>
-
+            
           <h2 className="homeHeading">Produtos Em Destaque</h2>
 
           <div className="container" id="container">
@@ -55,4 +56,3 @@ const Home = () => {
 };
 
 export default Home;
-

@@ -10,8 +10,7 @@ import Typography from "@material-ui/core/Typography";
 
 import { useAlert } from "react-alert";
 import MetaData from "../layout/MetaData";
-//import Typography from "@material-ui/core/Typography";
-//import MetaData from "../layout/MetaData";
+
 
 const categories = [
   "eletronico",
@@ -26,7 +25,7 @@ const categories = [
 const Products = ({ match }) => {
   const dispatch = useDispatch();
 
-  const alert = useAlert()
+  const alert = useAlert();
 
   const [currentPage, setCurrentPage] = useState(1);
   const [price, setPrice] = useState([0, 25000]);
@@ -54,10 +53,9 @@ const Products = ({ match }) => {
   };
 
   useEffect(() => {
-
-    if(error) {
-      alert.error(error)
-      dispatch(clearErrors())
+    if (error) {
+      alert.error(error);
+      dispatch(clearErrors());
     }
 
     dispatch(getProduct(keyword, currentPage, price, category, ratings));
@@ -71,7 +69,6 @@ const Products = ({ match }) => {
         <Loader />
       ) : (
         <Fragment>
-
           <MetaData title="PRODUTOS -- Diy Hellem Confecções." />
 
           <h2 className="productsHeading">Produtos</h2>
@@ -94,25 +91,19 @@ const Products = ({ match }) => {
               max={25000}
             />
 
-
             <Typography>Categorias</Typography>
             <ul className="categoryBox">
               {categories.map((category) => (
                 <li
                   className="category-link"
                   key={category}
-                  onClick={() => setCategory(category)} 
-                  
-                  
+                  onClick={() => setCategory(category)}
                   aria-hidden="true"
-                  
                 >
                   {category}
                 </li>
               ))}
             </ul>
-
-
 
             <fieldset>
               <Typography component="legend">Classificação</Typography>

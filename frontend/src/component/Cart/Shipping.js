@@ -6,7 +6,6 @@ import MetaData from "../layout/MetaData";
 import PinDropIcon from "@material-ui/icons/PinDrop";
 import HomeIcon from "@material-ui/icons/Home";
 
-
 import PeopleOutlineSharpIcon from "@mui/icons-material/PeopleOutlineSharp";
 
 import FormatListNumberedRtlIcon from "@mui/icons-material/FormatListNumberedRtl";
@@ -21,20 +20,16 @@ import { Country, State } from "country-state-city";
 import { useAlert } from "react-alert";
 import CheckoutSteps from "../Cart/CheckoutSteps.js";
 
-const Shipping = ({history}) => {
+const Shipping = ({ history }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
   const { shippingInfo } = useSelector((state) => state.cart);
-
 
   const [name, setName] = useState(shippingInfo.name);
   const [number, setNumber] = useState(shippingInfo.number);
   const [complement, setComplement] = useState(shippingInfo.complement);
   const [district, setDistrict] = useState(shippingInfo.district);
-  
 
-
-  
   const [address, setAddress] = useState(shippingInfo.address);
   const [city, setCity] = useState(shippingInfo.city);
   const [state, setState] = useState(shippingInfo.state);
@@ -42,16 +37,13 @@ const Shipping = ({history}) => {
   const [pinCode, setPinCode] = useState(shippingInfo.pinCode);
   const [phoneNo, setPhoneNo] = useState(shippingInfo.phoneNo);
 
-  
-
-
   const shippingSubmit = (e) => {
     e.preventDefault();
 
     if (phoneNo.length < 11 || phoneNo.length > 11) {
       alert.error("Digite o Código de Área + o Número do Celular");
       return;
-    };
+    }
 
     if (pinCode.length < 8 || pinCode.length > 8) {
       alert.error("o Cep deve conter 8 digitos: sem Traço e sem Ponto");
@@ -59,20 +51,31 @@ const Shipping = ({history}) => {
     }
 
     dispatch(
-      saveShippingInfo({ name, address, number, complement, district, city, state, country, pinCode, phoneNo })
+      saveShippingInfo({
+        name,
+        address,
+        number,
+        district,
+        complement,
+        city,
+        state,
+        pinCode,
+        country,
+        phoneNo,
+      })
     );
     history.push("/order/confirm");
   };
 
   return (
     <Fragment>
-      <MetaData title="Detalhes do Envio -- Diy Hellem Confecções." />
+      <MetaData title="Informações de Envio -- Diy Hellem Confecções." />
 
-      <CheckoutSteps activeStep={0}/>
+      <CheckoutSteps activeStep={0} />
 
       <div className="shippingContainer">
         <div className="shippingBox">
-          <h2 className="shippingHeading">Detalhes do Envio</h2>
+          <h2 className="shippingHeading">Enviar Para:</h2>
 
           <form
             className="shippingForm"
@@ -90,9 +93,6 @@ const Shipping = ({history}) => {
               />
             </div>
 
-
-
-
             <div>
               <HomeIcon />
               <input
@@ -103,7 +103,6 @@ const Shipping = ({history}) => {
                 onChange={(e) => setAddress(e.target.value)}
               />
             </div>
-
 
             <div>
               <FormatListNumberedRtlIcon />
@@ -164,12 +163,11 @@ const Shipping = ({history}) => {
             <div>
               <PhoneIcon />
               <input
-             
                 type="number"
                 placeholder="Telefone Celular"
                 required
                 value={phoneNo}
-                onChange={(e) =>  setPhoneNo(e.target.value)}
+                onChange={(e) => setPhoneNo(e.target.value)}
                 size="11"
               />
             </div>

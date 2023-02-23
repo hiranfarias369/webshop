@@ -10,7 +10,7 @@
 .shippingBox {
   background-color: white;
   width: 25vw;
-  height: 90vh;
+  height: 46vw;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -19,7 +19,7 @@
   text-align: center;
   color: rgba(0, 0, 0, 0.664);
   font: 400 1.3vmax "Roboto";
-  padding: 1.3vmax;
+  padding: 1vmax;
   border-bottom: 1px solid rgba(0, 0, 0, 0.205);
   width: 50%;
   margin: auto;
@@ -32,7 +32,7 @@
   margin: auto;
   padding: 2vmax;
   justify-content: space-evenly;
-  height: 80%;
+  height: 77%;
   transition: all 0.5s;
 }
 
@@ -44,7 +44,7 @@
 
 .shippingForm > div > input,
 .shippingForm > div > select {
-  padding: 1vmax 4vmax;
+  padding: 1vmax 3.5vmax;
   padding-right: 1vmax;
   width: 100%;
   box-sizing: border-box;
@@ -57,7 +57,7 @@
 .shippingForm > div > svg {
   position: absolute;
   transform: translateX(1vmax);
-  font-size: 1.6vmax;
+  font-size: 1.3vmax;
   color: rgba(0, 0, 0, 0.623);
 }
 
@@ -67,11 +67,11 @@
   color: white;
   font: 300 1vmax "Roboto";
   width: 100%;
-  padding: 1vmax;
+  padding: 0.5vmax;
   cursor: pointer;
   transition: all 0.5s;
   outline: none;
-  margin: 2vmax;
+  margin: 0.8vmax;
 }
 
 .shippingBtn:hover {
@@ -113,6 +113,6 @@
 /*DESATIVA AS SETAS DA ENTRADA NUMÉRICA*/
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
