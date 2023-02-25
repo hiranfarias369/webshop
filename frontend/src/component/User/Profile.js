@@ -20,11 +20,12 @@ const Profile = ({ history }) => {
   const closest = closestTo(diaAtual, [diaAtual]);
 
   return (
-    <Fragment>
+    <Fragment>666666666666666666666666666666666666666666666
       {loading ? (
         <Loader />
       ) : (
         <Fragment>
+          66666666666666666666666666666666666666
           <MetaData title={`${user.name}'s Profile`} />
           <div className="profileContainer">
             <div>

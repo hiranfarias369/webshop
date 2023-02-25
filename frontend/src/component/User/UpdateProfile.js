@@ -73,10 +73,13 @@ const UpdateProfile = ({ history }) => {
 
   return (
     <Fragment>
+      99999999999999999999999999999999999999999
       {loading ? (
         <Loader />
+
       ) : (
         <Fragment>
+          99999999999999999999999999999999999999999999
           <MetaData title="ATUALIZAR PERFIL -- Diy Hellem Confecções." />
 
           <div className="updateProfileContainer">

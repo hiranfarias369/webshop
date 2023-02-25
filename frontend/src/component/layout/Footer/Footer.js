@@ -9,6 +9,7 @@ import { ImFacebook2 } from "react-icons/im";
 const Footer = () => {
   return (
     <footer id="footer">
+ 
       <div className="leftFooter">
         <h4>Aplicativos para Celulares</h4>
         <p>Baixe nosso App para telefones Android e iOS</p>

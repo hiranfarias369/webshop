@@ -38,9 +38,12 @@ const ConfirmOrder = ({ history }) => {
 
   return (
     <Fragment>
+      bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
       <MetaData title="Confirmar Pedido" />
       <CheckoutSteps activeStep={1} />
+    
       <div className="confirmOrderPage">
+        
         <div>
           <div className="confirmshippingArea">
             <Typography>Endereço Para Entrega:</Typography>

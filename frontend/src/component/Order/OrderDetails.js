@@ -24,10 +24,12 @@ const OrderDetails = ({ match }) => {
   }, [dispatch, alert, error, match.params.id]);
   return (
     <Fragment>
+      2222222222222222222222222222222222
       {loading ? (
         <Loader />
       ) : (
         <Fragment>
+          2222222222222222222222222222222222
           <MetaData title="Detalhes do Pedido -- Diy Hellem Confecções." />
           <div className="orderDetailsPage">
             <div className="orderDetailsContainer">

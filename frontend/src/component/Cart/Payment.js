@@ -17,7 +17,6 @@ import "./payment.css";
 import CreditCardIcon from "@material-ui/icons/CreditCard";
 import EventIcon from "@material-ui/icons/Event";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
-
 import { createOrder, clearErrors } from "../../actions/orderAction";
 
 const Payment = ({ history }) => {
@@ -117,11 +116,11 @@ const Payment = ({ history }) => {
 
   return (
     <Fragment>
-      <MetaData title="Pagamento - Diy Hellem Confecções" />
+      <MetaData title="Payment" />
       <CheckoutSteps activeStep={2} />
       <div className="paymentContainer">
         <form className="paymentForm" onSubmit={(e) => submitHandler(e)}>
-          <Typography>Dados do Cartão</Typography>
+          <Typography>Card Info</Typography>
           <div>
             <CreditCardIcon />
             <CardNumberElement className="paymentInput" />
@@ -137,13 +136,7 @@ const Payment = ({ history }) => {
 
           <input
             type="submit"
-            value={`Confirmar Pagamento De:    ${
-              orderInfo &&
-              orderInfo.totalPrice.toLocaleString("pt-br", {
-                style: "currency",
-                currency: "BRL",
-              })
-            }`}
+            value={`Pay - ₹${orderInfo && orderInfo.totalPrice}`}
             ref={payBtn}
             className="paymentFormBtn"
           />

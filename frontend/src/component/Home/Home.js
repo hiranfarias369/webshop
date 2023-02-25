@@ -23,10 +23,12 @@ const Home = () => {
 
   return (
     <Fragment>
+     HOME.jssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
       {loading ? (
         <Loader />
       ) : (
         <Fragment>
+      
           <MetaData title="Diy Hellem Confecções." />
 
           <div className="banner">

@@ -9,13 +9,8 @@ import MetaData from "../layout/MetaData";
 import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, login, register } from "../../actions/userAction";
 import { useAlert } from "react-alert";
-import Eye from "../../images/eye.svg"
-import EyeOff from "../../images/eye-off.svg"
-
-
-
-
-
+import Eye from "../../images/eye.svg";
+import EyeOff from "../../images/eye-off.svg";
 
 const LoginSignUp = ({ history }) => {
   const dispatch = useDispatch();
@@ -76,8 +71,6 @@ const LoginSignUp = ({ history }) => {
     }
   };
 
-
-
   const redirect = location.search ? location.search.split("=")[1] : "/account";
 
   useEffect(() => {
@@ -108,30 +101,26 @@ const LoginSignUp = ({ history }) => {
     }
   };
 
-
-
-
   const [icon, setIcon] = useState(EyeOff);
   const [inputType, setInputType] = useState("password");
   const alternarVisibilityPassword = () => {
-    if(inputType === "password") {
+    if (inputType === "password") {
       setInputType("text");
-      setIcon(Eye)
+      setIcon(Eye);
     } else {
       setInputType("password");
-      setIcon(EyeOff)
+      setIcon(EyeOff);
     }
-  }
-
-
-
+  };
 
   return (
     <Fragment>
+      55555555555555555555555
       {loading ? (
         <Loader />
       ) : (
         <Fragment>
+          555555555555555555555555555555555555
           <MetaData title="LOGIN -- Diy Hellem Confecções." />
 
           <div className="LoginSignUpContainer">
@@ -141,6 +130,7 @@ const LoginSignUp = ({ history }) => {
                   <p onClick={(e) => switchTabs(e, "login")} aria-hidden="true">
                     EFETUAR LOGIN
                   </p>
+                  
                   <p
                     onClick={(e) => switchTabs(e, "register")}
                     aria-hidden="true"
@@ -160,36 +150,27 @@ const LoginSignUp = ({ history }) => {
                     value={loginEmail}
                     onChange={(e) => setLoginEmail(e.target.value)}
                   />
-
-
-                
-
-                  
                 </div>
 
                 <div className="loginPassword">
-                  
                   <LockOpenIcon />
-               
+
                   <input
                     type={inputType}
-
-
-                    placeholder="Password" 
-
-
+                    placeholder="Password"
                     required
                     value={loginPassword}
                     onChange={(e) => setLoginPassword(e.target.value)}
                   />
 
-                  
-                  <span className="password-icon" onClick={alternarVisibilityPassword} aria-hidden="true"><img src={icon} alt="" /></span>
-
-
+                  <span
+                    className="password-icon"
+                    onClick={alternarVisibilityPassword}
+                    aria-hidden="true"
+                  >
+                    <img src={icon} alt="" />
+                  </span>
                 </div>
-
-                
 
                 <Link to="/password/forgot">Recuperar Senha</Link>
                 <input type="submit" value="Entrar" className="loginBtn" />
@@ -236,10 +217,13 @@ const LoginSignUp = ({ history }) => {
                     onChange={registerDataChange}
                   />
 
-
-                  <span className="password-icon" onClick={alternarVisibilityPassword} aria-hidden="true"><img src={icon} alt="" /></span>
-
-
+                  <span
+                    className="password-icon"
+                    onClick={alternarVisibilityPassword}
+                    aria-hidden="true"
+                  >
+                    <img src={icon} alt="" />
+                  </span>
                 </div>
 
                 <div id="registerImage">

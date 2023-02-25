@@ -102,10 +102,12 @@ const ProductDetails = ({ match }) => {
 
   return (
     <Fragment>
+      ttttttttttttttttttttttttttttttt
       {loading ? (
         <Loader />
       ) : (
         <Fragment>
+          mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
           <MetaData title={`${product.name} -- Diy Hellem Confecções.`} />
           <div className="ProductDetails">
             <div>
@@ -220,7 +222,9 @@ const ProductDetails = ({ match }) => {
             </p>
           )}
         </Fragment>
+          
       )}
+     
     </Fragment>
   );
 };

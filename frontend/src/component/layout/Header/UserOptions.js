@@ -67,8 +67,10 @@ const UserOptions = ({ user }) => {
 
   return (
     <Fragment>
+      000000000000000000000000000000-----UserOptions
       <Backdrop open={open} style={{ zIndex: "10" }} />
       <SpeedDial
+      
         ariaLabel="SpeedDial tooltip example"
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
@@ -95,6 +97,6 @@ const UserOptions = ({ user }) => {
         ))}
       </SpeedDial>
     </Fragment>
-  );
-};
-export default UserOptions;
+  )
+}
+export default UserOptions
