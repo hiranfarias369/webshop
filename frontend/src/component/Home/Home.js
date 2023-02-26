@@ -23,7 +23,7 @@ const Home = () => {
 
   return (
     <Fragment>
-     HOME.jssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+     
       {loading ? (
         <Loader />
       ) : (

@@ -24,12 +24,12 @@ const OrderDetails = ({ match }) => {
   }, [dispatch, alert, error, match.params.id]);
   return (
     <Fragment>
-      2222222222222222222222222222222222
+  
       {loading ? (
         <Loader />
       ) : (
         <Fragment>
-          2222222222222222222222222222222222
+  
           <MetaData title="Detalhes do Pedido -- Diy Hellem Confecções." />
           <div className="orderDetailsPage">
             <div className="orderDetailsContainer">
@@ -42,17 +42,21 @@ const OrderDetails = ({ match }) => {
                   <p>Nome:</p>
                   <span>{order.user && order.user.name}</span>
                 </div>
+
+                
                 <div>
                   <p>Telefone Celular:</p>
                   <span>
                     {order.shippingInfo && order.shippingInfo.phoneNo}
                   </span>
                 </div>
+
+                
                 <div>
                   <p>Endereço:</p>
                   <span>
                     {order.shippingInfo &&
-                      `${order.shippingInfo.address}, ${order.shippingInfo.city}, ${order.shippingInfo.state}, ${order.shippingInfo.pinCode}, ${order.shippingInfo.country}`}
+                      `${order.shippingInfo.address},${order.shippingInfo.city}, ${order.shippingInfo.state}, ${order.shippingInfo.pinCode}, ${order.shippingInfo.country}`}
                   </span>
                 </div>
               </div>
@@ -77,10 +81,7 @@ const OrderDetails = ({ match }) => {
                 <div>
                   <p>Valor da Compra:</p>
                   <span>
-                    {(order.totalPrice && order.totalPrice).toLocaleString(
-                      "pt-br",
-                      { style: "currency", currency: "BRL" }
-                    )}
+                    {order.totalPrice && order.totalPrice.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})}
                   </span>
                 </div>
               </div>
@@ -90,7 +91,7 @@ const OrderDetails = ({ match }) => {
                 <div>
                   <p
                     className={
-                      order.orderStatus && order.orderStatus === "Entregue"
+                      order.orderStatus && order.orderStatus === "Delivered"
                         ? "greenColor"
                         : "redColor"
                     }

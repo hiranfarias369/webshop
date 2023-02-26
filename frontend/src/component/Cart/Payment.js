@@ -98,7 +98,7 @@ const Payment = ({ history }) => {
 
           history.push("/success");
         } else {
-          alert.error("There's some issue while processing payment ");
+          alert.error("Pagamento Não Autorizado. Se o Problema Persistir Contate Sua Operadora de Crédito!");
         }
       }
     } catch (error) {
@@ -116,11 +116,11 @@ const Payment = ({ history }) => {
 
   return (
     <Fragment>
-      <MetaData title="Payment" />
+      <MetaData title="Pagamento -- Diy Hellem Confecções." />
       <CheckoutSteps activeStep={2} />
       <div className="paymentContainer">
         <form className="paymentForm" onSubmit={(e) => submitHandler(e)}>
-          <Typography>Card Info</Typography>
+          <Typography>Dados do Cartão</Typography>
           <div>
             <CreditCardIcon />
             <CardNumberElement className="paymentInput" />
@@ -136,7 +136,7 @@ const Payment = ({ history }) => {
 
           <input
             type="submit"
-            value={`Pay - ₹${orderInfo && orderInfo.totalPrice}`}
+            value={`Confirmar Pagamento de:  ${orderInfo && orderInfo.totalPrice.toLocaleString("pt-BR" ,{style: "currency", currency: "BRL"})}`}
             ref={payBtn}
             className="paymentFormBtn"
           />

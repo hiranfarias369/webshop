@@ -67,12 +67,12 @@ const UpdatePassword = ({ history }) => {
 
   return (
     <Fragment>
-      88888888888888888888888888888888888888
+     
       {loading ? (
         <Loader />
       ) : (
         <Fragment>
-          888888888888888888888888888888888888888888888
+     
           <MetaData title="ALTERAR SENHA -- Diy Hellem Confecções " />
           <div className="updatePasswordContainer">
             <div className="updatePasswordBox">

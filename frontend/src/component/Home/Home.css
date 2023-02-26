@@ -10,7 +10,6 @@
   align-items: center;
   justify-content: center;
   color: white;
-  
 }
 
 .banner > h1 {
@@ -136,4 +135,4 @@
     margin: 0 0.5vmax;
     font: 300 1vmax "Roboto";
   }
-};
+}

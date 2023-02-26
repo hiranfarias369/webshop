@@ -3,7 +3,8 @@
   place-items: center;
   background-color: rgb(255, 255, 255);
   height: 65vh;
-  margin: 2vmax;
+  margin: 6vmax;
+  
 }
 
 .paymentForm {
@@ -12,12 +13,12 @@
 }
 
 .paymentForm > p {
-  font: 400 2vmax "Roboto";
+  font: 400 1.5vmax "Roboto";
   color: rgba(0, 0, 0, 0.753);
   border-bottom: 1px solid rgba(0, 0, 0, 0.13);
   padding: 1vmax 0;
   text-align: center;
-  width: 50%;
+  width: 100%;
   margin: auto;
 }
 

@@ -17,7 +17,7 @@ const Search = ({ history }) => {
 
   return (
     <Fragment>
-      3333333333333333333333333
+      
       <MetaData title="PESQUISAR -- Diy Hellem Confecções." />
       <form className="searchBox" onSubmit={searchSubmitHandler}>
 

@@ -24,7 +24,7 @@ const MyOrders = () => {
     {
       field: "status",
       headerName: "Situação",
-      minWidth: 150,
+      minWidth: 178,
       flex: 0.5,
       cellClassName: (params) => {
         return params.getValue(params.id, "status") === "Delivered"
@@ -34,7 +34,7 @@ const MyOrders = () => {
     },
     {
       field: "itemsQty",
-      headerName: "Qtd Items",
+      headerName: "Qtd",
       type: "number",
       minWidth: 150,
       flex: 0.3,
@@ -51,11 +51,12 @@ const MyOrders = () => {
     {
       field: "actions",
       flex: 0.3,
-      headerName: "Actions",
+      headerName: "Ações",
       minWidth: 150,
       type: "number",
       sortable: false,
       renderCell: (params) => {
+        
         return (
           <Link to={`/order/${params.getValue(params.id, "id")}`}>
             <LaunchIcon />
@@ -72,7 +73,7 @@ const MyOrders = () => {
         itemsQty: item.orderItems.length,
         id: item._id,
         status: item.orderStatus,
-        amount: item.totalPrice,
+        amount: item.totalPrice.toLocaleString("pt-BR" ,{style: "currency", currency: "BRL"}),
       });
     });
 
@@ -87,7 +88,6 @@ const MyOrders = () => {
 
   return (
     <Fragment>
-      1111111111111111111111111111111111111111111111111111
       <MetaData title={`${user.name} - Pedido(s)`} />
 
       {loading ? (

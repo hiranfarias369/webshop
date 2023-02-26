@@ -1,15 +1,18 @@
 .orderDetailsPage {
   background-color: white;
+  margin-top: -4%;
 }
 
 .orderDetailsContainer > h1 {
   font: 300 3vmax "Roboto";
-  margin: 4vmax 0;
+ 
+  
+  margin: 3vmax 0 ;
   color: tomato;
 }
 
 .orderDetailsContainer {
-  padding: 5vmax;
+  padding: 6vmax;
   padding-bottom: 0%;
 }
 
@@ -42,7 +45,7 @@
 }
 
 .orderDetailsCartItems {
-  padding: 2vmax 5vmax;
+  padding: 2vmax 6vmax;
   border-top: 1px solid rgba(0, 0, 0, 0.164);
 }
 
@@ -59,8 +62,8 @@
 
 .orderDetailsCartItemsContainer > div > a {
   color: #575757;
-  margin: 0 2vmax;
-  width: 60%;
+  margin: 0 2vmax ;
+  width: 70%;
   text-decoration: none;
 }
 

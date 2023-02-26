@@ -115,12 +115,12 @@ const LoginSignUp = ({ history }) => {
 
   return (
     <Fragment>
-      55555555555555555555555
+  
       {loading ? (
         <Loader />
       ) : (
         <Fragment>
-          555555555555555555555555555555555555
+         
           <MetaData title="LOGIN -- Diy Hellem Confecções." />
 
           <div className="LoginSignUpContainer">

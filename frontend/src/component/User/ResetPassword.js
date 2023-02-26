@@ -62,12 +62,12 @@ const ResetPassword = ({ history, match }) => {
 
   return (
     <Fragment>
-      7777777777777777777777777777777777777777
+     
       {loading ? (
         <Loader />
       ) : (
         <Fragment>
-          77777777777777777777777777777777777777777777777
+       
           <MetaData title="ALTERAR SENHA -- Diy Hellem Confecções" />
           <div className="resetPasswordContainer">
             <div className="resetPasswordBox">
