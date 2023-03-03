@@ -20,6 +20,14 @@ input[type="number"] {
 .greenColor {
   color: green !important;
 }
+.blueColor {
+  color: 
+  #0028ff !important;
+}
+.navBlueColor {
+  color: 
+  #120a8f !important;
+}
 .redColor {
-  color: red !important;
+  color:  red !important;
 }

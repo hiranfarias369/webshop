@@ -2,14 +2,15 @@
   width: 100vw;
   max-width: 100%;
   display: grid;
-  grid-template-columns: 1fr 5fr;
-  position: absolute;
+  grid-template-columns: 1fr 6fr;
+  
 }
 
 .dashboardContainer {
   border-left: 1px solid rgba(0, 0, 0, 0.13);
   background-color: rgb(255, 255, 255);
   padding: 3rem 0;
+  
 }
 
 .dashboardContainer > h1 {

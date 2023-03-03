@@ -24,26 +24,23 @@ const OrderDetails = ({ match }) => {
   }, [dispatch, alert, error, match.params.id]);
   return (
     <Fragment>
-  
       {loading ? (
         <Loader />
       ) : (
         <Fragment>
-  
           <MetaData title="Detalhes do Pedido -- Diy Hellem Confecções." />
           <div className="orderDetailsPage">
             <div className="orderDetailsContainer">
               <Typography component="h1">
                 Pedido Nº: {order && order._id}
               </Typography>
-              <Typography>Endereço Para Entrega</Typography>
+              <Typography>Cliente</Typography>
               <div className="orderDetailsContainerBox">
                 <div>
                   <p>Nome:</p>
                   <span>{order.user && order.user.name}</span>
                 </div>
 
-                
                 <div>
                   <p>Telefone Celular:</p>
                   <span>
@@ -51,12 +48,17 @@ const OrderDetails = ({ match }) => {
                   </span>
                 </div>
 
-                
                 <div>
                   <p>Endereço:</p>
                   <span>
                     {order.shippingInfo &&
-                      `${order.shippingInfo.address},${order.shippingInfo.city}, ${order.shippingInfo.state}, ${order.shippingInfo.pinCode}, ${order.shippingInfo.country}`}
+                      `${order.shippingInfo.address}, ${order.shippingInfo.number}, ${order.shippingInfo.district},  ${order.shippingInfo.city}, ${order.shippingInfo.state}, ${order.shippingInfo.pinCode}, ${order.shippingInfo.country}`}
+                  </span>
+                </div>
+                <div>
+                  <p>Ponto de Referência:</p>
+                  <span>
+                    {order.shippingInfo && order.shippingInfo.complement}
                   </span>
                 </div>
               </div>
@@ -67,31 +69,49 @@ const OrderDetails = ({ match }) => {
                     className={
                       order.paymentInfo &&
                       order.paymentInfo.status === "succeeded"
-                        ? "greenColor"
+                        ? "blueColor"
                         : "redColor"
                     }
                   >
                     {order.paymentInfo &&
                     order.paymentInfo.status === "succeeded"
-                      ? "Confirmado"
-                      : "Pendente"}
+                      ? "PAGAMENTO CONFIRMADO"
+                      : "PAGAMENTO PENDENTE"}
                   </p>
                 </div>
 
                 <div>
-                  <p>Valor da Compra:</p>
-                  <span>
-                    {order.totalPrice && order.totalPrice.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})}
+                  <p
+                    className={
+                      order
+                        ? "blueColor" : ""
+                    }
+                  >
+                    Valor da Compra:
+                  </p>
+                  <span
+                    className={
+                      order.paymentInfo &&
+                      order.paymentInfo.status === "succeeded"
+                        ? "blueColor"
+                        : "redColor"
+                    }
+                  >
+                    {order.totalPrice &&
+                      order.totalPrice.toLocaleString("pt-BR", {
+                        style: "currency",
+                        currency: "BRL",
+                      })}
                   </span>
                 </div>
               </div>
 
-              <Typography>Status do Pedido</Typography>
+              <Typography>Situação do Pedido</Typography>
               <div className="orderDetailsContainerBox">
                 <div>
                   <p
                     className={
-                      order.orderStatus && order.orderStatus === "Delivered"
+                      order.orderStatus && order.orderStatus === "Pedido Enviado"
                         ? "greenColor"
                         : "redColor"
                     }
@@ -103,7 +123,7 @@ const OrderDetails = ({ match }) => {
             </div>
 
             <div className="orderDetailsCartItems">
-              <Typography>Items do Pedido:</Typography>
+              <Typography>Itens do Pedido:</Typography>
               <div className="orderDetailsCartItemsContainer">
                 {order.orderItems &&
                   order.orderItems.map((item) => (

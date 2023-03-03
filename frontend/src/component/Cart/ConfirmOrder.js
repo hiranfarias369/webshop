@@ -40,12 +40,14 @@ const ConfirmOrder = ({ history }) => {
     <Fragment>
       <MetaData title="Confirmar Pedido" />
       <CheckoutSteps activeStep={1} />
-    
+     
       <div className="confirmOrderPage">
         
         <div>
           <div className="confirmshippingArea">
+            
             <Typography>Endereço Para Entrega:</Typography>
+            
             <div className="confirmshippingAreaBox">
               <div>
                 <p>Nome:</p>
@@ -92,7 +94,7 @@ const ConfirmOrder = ({ history }) => {
             </div>
           </div>
           <div className="confirmCartItems">
-            <Typography>Produtos do Seu Carrinho:</Typography>
+            <Typography>Itens do Seu Carrinho:</Typography>
             <div className="confirmCartItemsContainer">
               {cartItems &&
                 cartItems.map((item) => (

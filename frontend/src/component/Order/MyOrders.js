@@ -26,12 +26,19 @@ const MyOrders = () => {
       headerName: "Situação",
       minWidth: 178,
       flex: 0.5,
+      
       cellClassName: (params) => {
-        return params.getValue(params.id, "status") === "Delivered"
-          ? "greenColor"
-          : "redColor";
+        
+        const situation = params.getValue(params.id, "status") 
+
+        const result = situation === "Pedido Entregue" ? "blueColor" : situation === "Pedido Enviado" ? "greenColor" : "redColor"
+        
+        return result
       },
+
     },
+
+    
     {
       field: "itemsQty",
       headerName: "Qtd",

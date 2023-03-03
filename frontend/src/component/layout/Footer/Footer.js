@@ -9,7 +9,6 @@ import { ImFacebook2 } from "react-icons/im";
 const Footer = () => {
   return (
     <footer id="footer">
- 
       <div className="leftFooter">
         <h4>Aplicativos para Celulares</h4>
         <p>Baixe nosso App para telefones Android e iOS</p>
@@ -31,15 +30,15 @@ const Footer = () => {
 
       <div className="rightFooter">
         <h4>Siga-nos</h4>
-        <a href="https://www.instagram.com/diyhellem/">
+        <a href="https://www.instagram.com/diyhellem/"target="_blank" rel="noopener noreferrer">
           {" "}
           <FaInstagram />{" "}
         </a>
-        <a href="https://www.facebook.com/Diy-Hellem-Confec%C3%A7%C3%B5es-102838436058751">
+        <a href="https://www.facebook.com/Diy-Hellem-Confec%C3%A7%C3%B5es-102838436058751"target="_blank" rel="noopener noreferrer">
           {" "}
           <ImFacebook2 />{" "}
         </a>
-        <a href="https://github.com/hiranfarias369">
+        <a href="https://github.com/hiranfarias369"target="_blank" rel="noopener noreferrer">
           {" "}
           <FaTwitterSquare />{" "}
         </a>

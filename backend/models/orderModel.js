@@ -34,6 +34,26 @@ const orderSchema = new mongoose.Schema({
 
 
 
+    district: {
+      type: String,
+      required: true,
+    },
+
+    complement: {
+      type: String,
+      required: true,
+    },
+
+
+    name: {
+      type: String,
+      required: true,
+    },
+    number: {
+      type: Number,
+      required: true,
+    },
+
    
 
   },
@@ -115,7 +135,7 @@ const orderSchema = new mongoose.Schema({
   orderStatus: {
     type: String,
     requered: true,
-    default: "Processing orders",
+    default: "Processando Pedido...",
   },
 
   deliveredAt: Date,

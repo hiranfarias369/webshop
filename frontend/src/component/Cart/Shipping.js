@@ -16,6 +16,8 @@ import TransferWithinAStationIcon from "@material-ui/icons/TransferWithinAStatio
 import { Country, State } from "country-state-city";
 import { useAlert } from "react-alert";
 import CheckoutSteps from "../Cart/CheckoutSteps";
+//import TelefoneBrasileiroInput from "react-telefone-brasileiro";
+//import ReactDOM from "react-dom";
 
 const Shipping = ({ history }) => {
   const dispatch = useDispatch();
@@ -23,13 +25,11 @@ const Shipping = ({ history }) => {
   const { shippingInfo } = useSelector((state) => state.cart);
 
   const [address, setAddress] = useState(shippingInfo.address);
-  
-  
+
   const [name, setName] = useState(shippingInfo.name);
   const [number, setNumber] = useState(shippingInfo.number);
   const [complement, setComplement] = useState(shippingInfo.complement);
   const [district, setDistrict] = useState(shippingInfo.district);
-
 
   const [city, setCity] = useState(shippingInfo.city);
   const [state, setState] = useState(shippingInfo.state);
@@ -37,26 +37,46 @@ const Shipping = ({ history }) => {
   const [pinCode, setPinCode] = useState(shippingInfo.pinCode);
   const [phoneNo, setPhoneNo] = useState(shippingInfo.phoneNo);
 
+  //   onFocus={(e) =>setNumber(e.target.addEventListener("wheel",function (e) {e.preventDefault();},{ passive: false }))}
+
+ 
   const shippingSubmit = (e) => {
     e.preventDefault();
 
-    if (phoneNo.length < 12 || phoneNo.length > 12) {
-      alert.error("O NÚMERO DO TELEFONE CELULAR DEVE CONTER 12 DIGITOS - DDD + TELEFONE");
+    if (phoneNo.length < 14 || phoneNo.length > 14) {
+      alert.error(
+        "DIGITE O NÚMERO DO TELEFONE CORRETAMENTE: (XX)XXXXX-XXXX"
+      );
       return;
     }
-    if (pinCode.length < 8 || pinCode.length > 8) {
-      alert.error("O CEP DEVE CONTER 8 DIGITOS - SEM TRAÇO OU PONTO!");
-      return;
-    }
+    // if (pinCode.length < 8 || pinCode.length > 8) {
+    //   alert.error("O CEP DEVE CONTER 8 DIGITOS - SEM TRAÇO OU PONTO!");
+    //   return;
+    // }
+
     dispatch(
-      saveShippingInfo({ name, address, number, complement, district, city, state, country, pinCode, phoneNo })
+      saveShippingInfo({
+        name,
+        address,
+        number,
+        complement,
+        district,
+        city,
+        state,
+        country,
+        pinCode,
+        phoneNo,
+      })
     );
     history.push("/order/confirm");
   };
 
+  
+
   return (
+    
     <Fragment>
-      
+
       <MetaData title="Endereço Para Entrega -- Diy Hellem Confecções." />
 
       <CheckoutSteps activeStep={0} />
@@ -70,19 +90,19 @@ const Shipping = ({ history }) => {
             encType="multipart/form-data"
             onSubmit={shippingSubmit}
           >
-
             <div>
               <PeopleIcon />
+
               <input
+                
                 type="text"
                 placeholder="Nome"
+                pattern="^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$"
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
-
-
 
             <div>
               <HomeIcon />
@@ -95,17 +115,10 @@ const Shipping = ({ history }) => {
               />
             </div>
 
-
-
-
-
-
-
-            
             <div>
               <FormatListNumberedIcon />
               <input
-                type="number"
+                type="text"
                 placeholder="Número"
                 required
                 value={number}
@@ -113,9 +126,6 @@ const Shipping = ({ history }) => {
               />
             </div>
 
-
-
-            
             <div>
               <FmdBadIcon />
               <input
@@ -138,19 +148,6 @@ const Shipping = ({ history }) => {
               />
             </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
             <div>
               <LocationCityIcon />
               <input
@@ -165,8 +162,9 @@ const Shipping = ({ history }) => {
             <div>
               <PinDropIcon />
               <input
-                type="number"
-                placeholder="Cep"
+                type="text"
+                placeholder="Cep: XXXXX-XXX"
+                pattern="\d{5}-\d{3}"
                 required
                 value={pinCode}
                 onChange={(e) => setPinCode(e.target.value)}
@@ -177,12 +175,13 @@ const Shipping = ({ history }) => {
             <div>
               <PhoneIcon />
               <input
-                type="number"
-                placeholder="Telefone Celular"
+                type="text"
+                placeholder="Tel: (XX)XXXXX-XXXX"
+                pattern="\(\d{2}\)\d{5}-\d{4}"
                 required
                 value={phoneNo}
                 onChange={(e) => setPhoneNo(e.target.value)}
-                size="12"
+                // size="14"
               />
             </div>
 
@@ -236,5 +235,5 @@ const Shipping = ({ history }) => {
     </Fragment>
   );
 };
-
+//ReactDOM.render(<shippingSubmit />, document.getElementById("root"));
 export default Shipping;

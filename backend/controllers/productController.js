@@ -86,13 +86,6 @@ exports.getProductDetails = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-
-
-
-
-
-
-
 //Update product -- Admin
 exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
   let product = await Product.findById(req.params.id);
@@ -110,33 +103,26 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
     images = req.body.images;
   }
 
-
-  if(images !== undefined) {
-      //Deleting Images From Cloudnary
-  for (let i = 0; i < product.images.length; i++) {
-    await cloudinary.v2.uploader.destroy(
-       product.images[i].public_id
-     );
+  if (images !== undefined) {
+    //Deleting Images From Cloudnary
+    for (let i = 0; i < product.images.length; i++) {
+      await cloudinary.v2.uploader.destroy(product.images[i].public_id);
     }
-
 
     const imagesLinks = [];
 
-  for (let i = 0; i < images.length; i++) {
-    const result = await cloudinary.v2.uploader.upload(images[i], {
-      folder: "products",
-    });
-    imagesLinks.push({
-      public_id: result.public_id,
-      url: result.secure_url,
-    });
-  }
+    for (let i = 0; i < images.length; i++) {
+      const result = await cloudinary.v2.uploader.upload(images[i], {
+        folder: "products",
+      });
+      imagesLinks.push({
+        public_id: result.public_id,
+        url: result.secure_url,
+      });
+    }
 
     req.body.images = imagesLinks;
-
   }
-
-
 
   product = await Product.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
@@ -149,16 +135,6 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-
-
-
-
-
-
-
-
-
-
 //DeleteProduct
 
 exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
@@ -170,16 +146,14 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
 
   //Deleting Images From Cloudnary
   for (let i = 0; i < product.images.length; i++) {
-   await cloudinary.v2.uploader.destroy(
-      product.images[i].public_id
-    );
+    await cloudinary.v2.uploader.destroy(product.images[i].public_id);
   }
 
   await product.remove();
 
   res.status(200).json({
     success: true,
-    message: "Product deleted successfully",
+    message: "Produto Deletado Com Sucesso",
   });
 });
 
@@ -254,15 +228,28 @@ exports.deleteReview = catchAsyncErrors(async (req, res, next) => {
     avg += rev.rating;
   });
 
-  const ratings = avg / reviews.length;
+  let ratings = 0;
+
+  if (reviews.length === 0) {
+    ratings = 0;
+  } else {
+    ratings = avg / reviews.length;
+  }
 
   const numOfReviews = reviews.length;
 
   await Product.findByIdAndUpdate(
     req.query.productId,
-    { reviews, ratings, numOfReviews },
-
-    { new: true, runValidators: true, useFindAndModify: false }
+    {
+      reviews,
+      ratings,
+      numOfReviews,
+    },
+    {
+      new: true,
+      runValidators: true,
+      useFindAndModify: false,
+    }
   );
 
   res.status(200).json({

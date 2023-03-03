@@ -65,12 +65,12 @@ const Products = ({ match }) => {
 
   return (
     <Fragment>
-      kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+     
       {loading ? (
         <Loader />
       ) : (
         <Fragment>
-          hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+         
           <MetaData title="PRODUTOS -- Diy Hellem Confecções." />
 
           <h2 className="productsHeading">Produtos</h2>

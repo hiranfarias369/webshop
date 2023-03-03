@@ -1,13 +1,14 @@
 .orderDetailsPage {
   background-color: white;
-  margin-top: -4%;
+  margin-top: -6.5%;
+  
 }
 
 .orderDetailsContainer > h1 {
   font: 300 3vmax "Roboto";
  
   
-  margin: 3vmax 0 ;
+  margin: 3vmax  ;
   color: tomato;
 }
 
@@ -51,7 +52,7 @@
 
 .orderDetailsCartItemsContainer > div {
   display: flex;
-  font: 400 1vmax "Roboto";
+  font: 400 0.95vmax "Roboto";
   align-items: center;
   margin: 2vmax 0;
 }
@@ -68,7 +69,7 @@
 }
 
 .orderDetailsCartItemsContainer > div > span {
-  font: 100 1vmax "Roboto";
+  font: 100 0.95vmax "Roboto";
   color: #5e5e5e;
 }
 

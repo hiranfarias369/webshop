@@ -68,22 +68,24 @@
 
 .filterBox {
   width: 10vmax;
-  position: absolute;
-  top: 10vmax;
-  left: 4vmax;
+  position: fixed;
+  top: 8vmax;
+  left: 3.1vmax;
+  
 }
 
 .categoryBox {
-  padding: 0%;
+  padding: 1%;
 }
 
 .category-link {
   list-style: none;
   color: rgba(0, 0, 0, 0.61);
-  font: 400 0.8vmax "Roboto";
+  font: 400 0.9vmax "Roboto";
   margin: 0.4vmax;
   cursor: pointer;
   transition: all 0.5s;
+  padding: 8px;
 }
 .category-link:hover {
   color: tomato;

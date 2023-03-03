@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  
 }
 
 #productListHeading {
@@ -16,6 +17,7 @@
   transition: all 0.5s;
   margin: 2rem;
   text-align: center;
+  
 }
 
 .productListTable {

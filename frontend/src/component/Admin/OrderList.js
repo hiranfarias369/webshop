@@ -41,7 +41,7 @@ const OrderList = ({ history }) => {
     }
 
     if (isDeleted) {
-      alert.success("Order Deleted Successfully");
+      alert.success("Pedido Deletado com Sucesso!");
       history.push("/admin/orders");
       dispatch({ type: DELETE_ORDER_RESET });
     }
@@ -58,14 +58,20 @@ const OrderList = ({ history }) => {
       minWidth: 150,
       flex: 0.5,
       cellClassName: (params) => {
-        return params.getValue(params.id, "status") === "Delivered"
-          ? "greenColor"
-          : "redColor";
+        const situation = params.getValue(params.id, "status") 
+        
+      
+
+        const result = situation === "Pedido Entregue" ? "blueColor" : situation === "Pedido Enviado" ? "greenColor" : "redColor"
+     
+        
+        
+        return result
       },
     },
     {
       field: "itemsQty",
-      headerName: "Qtd. Items ",
+      headerName: "Qtd",
       type: "number",
       minWidth: 150,
       flex: 0.4,
@@ -128,7 +134,7 @@ const OrderList = ({ history }) => {
       <div className="dashboard">
         <SideBar />
         <div className="productListContainer">
-          <h1 id="productListHeading">ALL ORDERS</h1>
+          <h1 id="productListHeading">TODOS OS PEDIDOS</h1>
 
           <DataGrid
             rows={rows}

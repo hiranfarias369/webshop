@@ -82,14 +82,14 @@ exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
   const order = await Order.findById(req.params.id);
 
   if (!order) {
-    return next(new ErrorHander("Order not found with this Id", 404));
+    return next(new ErrorHander("Pedido Não Encontrado com Este Id", 404));
   }
 
-  if (order.orderStatus === "Delivered") {
-    return next(new ErrorHander("You have already delivered this order", 400));
+  if (order.orderStatus === "Pedido Entregue") {
+    return next(new ErrorHander("Pedido Entregue!", 400));
   }
 
-  if (req.body.status === "Shipped") {
+  if (req.body.status === "Pedido Enviado") {
     order.orderItems.forEach(async (o) => {
       await updateStock(o.product, o.quantity);
     });
@@ -97,7 +97,7 @@ exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
 
   order.orderStatus = req.body.status;
 
-  if (req.body.status === "Delivered") {
+  if (req.body.status === "Pedido Entregue") {
     order.deliveredAt = Date.now();
   }
 
@@ -121,7 +121,7 @@ exports.deleteOrder = catchAsyncErrors(async (req, res, next) => {
   const order = await Order.findById(req.params.id);
 
   if (!order) {
-    return next(new ErrorHander("Order not found with this Id", 404));
+    return next(new ErrorHander("Pedido Não Encontrado com Este Id", 404));
   }
 
   await order.remove();
