@@ -1,13 +1,9 @@
-
-
-
-
 .contactContainer {
   width: 100vw;
 
   position: fixed;
 
-  background-image: linear-gradient(to right, #3027ae, #4c40f0, #3027ae);
+  background-image: linear-gradient(to right, tomato, #4c40f0, tomato);
 
   height: 100vmin;
   display: flex;
@@ -16,14 +12,12 @@
   align-items: center;
   justify-content: center;
   color: white;
-  
 }
 
 .mailBtn {
   text-decoration: none;
   transform: translateX(-100vw);
   animation: mailBtnAnimation 2s forwards;
-  
 }
 
 .mailBtn > button {
@@ -31,7 +25,9 @@
   color: white;
   font: 200 2vmax "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
     sans-serif;
-    /* background: transparent !important; */
+  /* background: transparent !important; */
+  border-radius: 25px;
+
   cursor: pointer;
   padding: 2vmax;
 }
@@ -60,6 +56,7 @@
   text-decoration: none;
   font-size: 1.3vmax;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+
   color: white;
   transition: all 0.5s;
   margin: 0.5vmax;
@@ -67,4 +64,19 @@
 
 .rightFooters > a:hover {
   color: #800000;
+}
+.Logo_Diy_Hellem {
+  background-color: #ffffff;
+  border-radius: 100%;
+  width: 290px;
+  height: 290px;
+  overflow: hidden;
+  position: relative;
+  /* opacity:0.1; */
+}
+
+.Logo_Diy_Hellem img {
+  height: 290px;
+  width: 290px;
+  object-fit: cover;
 }

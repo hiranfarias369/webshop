@@ -18,7 +18,7 @@ const About = () => {
           <div>
             <Avatar
               style={{ width: "10vmax", height: "10vmax", margin: "2vmax 0" }}
-              src="https://res.cloudinary.com/tripleayt/image/upload/v1631555947/products/jpyibarlaxawvcvqjv5b.png"
+              src="https://res.cloudinary.com/dzlroenus/image/upload/v1677931302/avatars/Logo_Diy_Hellem_rqonk7.webp"
               alt="Founder"
             />
             <Typography>Abhishek Singh</Typography>

@@ -1,29 +1,83 @@
+
+
 <!DOCTYPE html>
 
 <html lang="pt-br">
   
   <head>
-  
+   
     <meta charset="utf-8" />
-
+    
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-
+    
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+     
 
     <meta name="theme-color" content="#000000" />
     <meta
-      name="description"
-      
-      content="Web site created using create-react-app"
+    name="description"
+    
+    content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-
+    
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <title>WEBSHOP</title>
+    <link rel="stylesheet"  href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css>
+    
+    <title>DIY HELLEM CONFECÇÕES.</title>
+
+
+    <style type="text/css">
+      .whatsapp-link {
+              position: fixed;
+              width: 53px;
+              height:53px;
+              bottom: 40px;
+              right: 40px;
+              background-color: #25d366;
+              color: #fff;
+              border-radius: 50px;
+              
+              text-align:  center ;
+              font-size: 35px;
+              box-shadow: 1px 1px 2px #615e5e;
+              z-index: 1000;
+            
+
+      }
+
+      .whatsapp-link:hover {
+    transform: scale(1.1);
+    transition: all 0.8s;
+  } 
+
+      .fa-whatsapp {
+        margin-top: 10.8px ;
+        
+      }
+
+      .fa-whatsapp:hover {
+        color: #ff007f;
+  transition: 0.8s;
+}
+
+
+    </style>
+    
+
   </head>
   <body>
+    
+    <a  class="whatsapp-link" href="https://web.whatsapp.com/send?phone=5582999140225" target="_blank" rel="noopener noreferrer" > 
+      
+      <i class = "fa fa-whatsapp"></i>
+      
+    </a>
+    
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+
     <div id="root"></div>
   </body>
 </html>
