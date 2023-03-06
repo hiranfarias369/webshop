@@ -9,7 +9,7 @@ const errorMiddleware = require("./middleware/error");
 
 
 
-const cors = require("cors");
+
 
 
 
@@ -25,11 +25,7 @@ if(process.env.NODE_ENV !== "PRODUCTION"){
 
 
 
-app.use(cors({
-  credentials:true, 
-  methods:["GET", "POST", "PUT", "DELETE"],
-  origin: [process.env.FRONTEND_URI_1, process.env.FRONTEND_URI_2],
-}))
+
 
 
 
