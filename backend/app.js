@@ -11,8 +11,7 @@ const errorMiddleware = require("./middleware/error");
 
 // config
 
-const__dirname = path.resolve();
-app.use("/uploads", express.static(path.join(__dirname, "/uploads")))
+
 
 
 
