@@ -21,7 +21,7 @@
 
 
    
-    "build":  "frontend && backend && npm install  && npm run build "
+    "build":  "cd frontend && backend && yarn add install  && yarn run build "
 
 
 
