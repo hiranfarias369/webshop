@@ -20,7 +20,7 @@
 
 
 
-    "build":  "cd frontend npm install  && npm run build "
+    "build":  "cd /d/webshop/frontend && npm install  && npm run build "
 
 
 
