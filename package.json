@@ -14,8 +14,17 @@
     "start": "node backend/server.js",
 
     "dev": "nodemon backend/server.js", 
+
+
+
+
+
+
    
-    "build":  "cd frontend  && npm install  && npm run build "
+    "build":  "frontend && backend && npm install  && npm run build "
+
+
+
 
 
 
