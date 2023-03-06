@@ -85,7 +85,7 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
     validateBeforeSave: false,
   });
 
-  const resetPasswordUrl = `${req.protocol}://${req.get("host")}password/reset/${resetToken}` ;
+  const resetPasswordUrl = `${req.protocol}://${req.get("host")}/password/reset/${resetToken}` ;
 
   const message = `O seu código de redefinição de senha é :- \n\n ${resetPasswordUrl} \n\nSe não solicitou este e-mail então, por favor ignore-o.`;
 
