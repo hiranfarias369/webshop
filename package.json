@@ -20,7 +20,7 @@
 
 
 
-    "build":  "npm install --prefix frontend && npm run build --prefix frontend"
+    "build":  "npm install frontend && npm run build frontend"
 
 
 
