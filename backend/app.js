@@ -5,23 +5,35 @@ const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
 const dotenv = require("dotenv");
 const path = require("path");
-
 const errorMiddleware = require("./middleware/error");
 
 
+
+const cors = require("cors");
+
+
+
+
+
+
 // config
-
-
-
-
-
-
-
-
-
 if(process.env.NODE_ENV !== "PRODUCTION"){
   require("dotenv").config({ path: "backend/config/config.env" });
  }
+
+
+
+
+
+app.use(cors({
+  credentials:true, 
+  methods:["GET", "POST", "PUT", "DELETE"],
+  origin: [process.env.FRONTEND_URI_1, process.env.FRONTEND_URI_2],
+}))
+
+
+
+
 
 app.use(express.json());
 
