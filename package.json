@@ -21,7 +21,7 @@
 
 
    
-    "build":  "cd frontend  && npm install  && npm run build "
+    "build":  "frontend npm install  && npm run build "
 
 
 
