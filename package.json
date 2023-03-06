@@ -21,7 +21,7 @@
 
 
    
-    "build":  "cd frontend && backend && yarn add install  && yarn run build "
+    "build":  "cd frontend && backend && yarn add  && yarn run build "
 
 
 
