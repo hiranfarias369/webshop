@@ -11,7 +11,7 @@
 
     
 
-    "start": "node server/index.js",
+    "start": "node backend/index.js/server.js",
 
 
 
