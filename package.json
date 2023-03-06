@@ -20,7 +20,7 @@
 
 
 
-    "build": "NPM_CONFIG_PRODUCTION=false && npm install --prefix frontend && npm run build --prefix frontend"
+    "build":  "npm install --prefix frontend && npm run build --prefix frontend"
 
 
 
