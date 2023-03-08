@@ -9,15 +9,6 @@
     "start": "node backend/server.js",
     "dev": "nodemon backend/server.js"
     
-
-
-
-
-
-
-
-
-    
   },
   "repository": {
     "type": "git",
